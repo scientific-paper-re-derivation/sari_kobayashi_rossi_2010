@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5022,        166]
-NotebookOptionsPosition[      4553,        146]
-NotebookOutlinePosition[      4900,        161]
-CellTagsIndexPosition[      4857,        158]
+NotebookDataLength[      9596,        309]
+NotebookOptionsPosition[      8636,        275]
+NotebookOutlinePosition[      8983,        290]
+CellTagsIndexPosition[      8940,        287]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -142,6 +142,135 @@ Cell[BoxData["True"], "Output",
  CellChangeTimes->{{3.678839076294902*^9, 3.678839086001326*^9}, {
    3.6788391209491262`*^9, 3.6788391344608526`*^9}, {3.6788392208480206`*^9, 
    3.678839237933217*^9}, 3.6788392697846527`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]4", "=", 
+   RowBox[{"rm", "\[Equal]", 
+    FractionBox[
+     RowBox[{"2", "rp"}], 
+     RowBox[{"1", "+", 
+      RowBox[{"Cos", "[", "f", "]"}]}]]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.678839547539559*^9, 3.6788395615007396`*^9}}],
+
+Cell["\<\
+To calculate the velocity at periapse, we use the fact that the total energy \
+is zero, and the radial velocity is zero\
+\>", "Text",
+ CellChangeTimes->{{3.6788396719683495`*^9, 3.6788397396571865`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"G", " ", "M"}], "r"]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], 
+     SuperscriptBox["v", "2"]}]}], "\[Equal]", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", " ", "/.", " ", 
+   RowBox[{"r", "\[Rule]", "rp"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "/.", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"%", ",", "v"}], "]"}], "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v\[LetterSpace]peri", "=", "%"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.678839719665187*^9, 3.6788398225427437`*^9}}],
+
+Cell["The angular momentum is therefore", "Text",
+ CellChangeTimes->{{3.6788398361140227`*^9, 3.678839842153536*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"angular\[LetterSpace]momentum", "=", 
+   RowBox[{"v\[LetterSpace]peri", "*", "rp"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6788398443947954`*^9, 3.6788398601614375`*^9}}],
+
+Cell["Angular acceleration", "Text",
+ CellChangeTimes->{{3.6788398764440727`*^9, 3.6788398848354077`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"l", "/", 
+   SuperscriptBox["rm", "2"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", " ", "/.", " ", 
+   RowBox[{"l", "\[Rule]", " ", "angular\[LetterSpace]momentum"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", " ", "/.", " ", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"eqn\[LetterSpace]4", ",", "rm"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fdot", "=", "%"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6788399018886547`*^9, 3.6788399220000896`*^9}, {
+  3.6788400018353615`*^9, 3.678840004084355*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  FractionBox["1", "fdot"], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Integrate", "[", 
+   RowBox[{"%", ",", "f"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"my\[LetterSpace]eqn\[LetterSpace]5", "=", 
+   RowBox[{"ttil", "==", "%"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6788400439830847`*^9, 3.678840052427659*^9}, {
+  3.6788401091587334`*^9, 3.6788401284615297`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]5", "=", 
+   RowBox[{"ttil", "\[Equal]", 
+    RowBox[{
+     FractionBox[
+      SqrtBox["2"], "3"], 
+     SqrtBox[
+      FractionBox[
+       SuperscriptBox["rp", "3"], 
+       RowBox[{"G", " ", "M"}]]], 
+     RowBox[{"Tan", "[", 
+      FractionBox["f", "2"], "]"}], 
+     RowBox[{"(", 
+      RowBox[{"3", "+", 
+       SuperscriptBox[
+        RowBox[{"Tan", "[", 
+         FractionBox["f", "2"], "]"}], "2"]}], ")"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6788401208315763`*^9, 3.678840160674735*^9}}],
+
+Cell["Now I need to show that both forms are equivalent", "Text",
+ CellChangeTimes->{{3.6788401651247015`*^9, 3.6788401800262127`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    RowBox[{"eqn\[LetterSpace]5", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"my\[LetterSpace]eqn\[LetterSpace]5", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]], "\[Equal]", "1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Simplify", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{
+    RowBox[{"G", ">", "0"}], "&&", 
+    RowBox[{"M", ">", "0"}], "&&", 
+    RowBox[{"rp", ">", "0"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.678840182331732*^9, 3.6788402264710484`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.678840207254567*^9, 3.6788402269715643`*^9}}]
 }, Open  ]]
 },
 WindowSize->{759, 553},
@@ -167,6 +296,20 @@ Cell[2902, 100, 103, 1, 30, "Text"],
 Cell[CellGroupData[{
 Cell[3030, 105, 1277, 33, 132, "Input"],
 Cell[4310, 140, 227, 3, 31, "Output"]
+}, Open  ]],
+Cell[4552, 146, 289, 8, 48, "Input"],
+Cell[4844, 156, 213, 4, 49, "Text"],
+Cell[5060, 162, 692, 22, 108, "Input"],
+Cell[5755, 186, 117, 1, 30, "Text"],
+Cell[5875, 189, 208, 4, 31, "Input"],
+Cell[6086, 195, 106, 1, 30, "Text"],
+Cell[6195, 198, 643, 17, 94, "Input"],
+Cell[6841, 217, 425, 10, 88, "Input"],
+Cell[7269, 229, 558, 18, 68, "Input"],
+Cell[7830, 249, 135, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[7990, 254, 528, 15, 70, "Input"],
+Cell[8521, 271, 99, 1, 64, "Output"]
 }, Open  ]]
 }
 ]
