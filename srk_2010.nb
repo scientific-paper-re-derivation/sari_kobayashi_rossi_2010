@@ -1,0 +1,175 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5022,        166]
+NotebookOptionsPosition[      4553,        146]
+NotebookOutlinePosition[      4900,        161]
+CellTagsIndexPosition[      4857,        158]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]1", "=", 
+   RowBox[{
+    RowBox[{"Dt", "[", 
+     RowBox[{"r1", ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "2"}], "}"}]}], "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"G", " ", "M"}], 
+        SuperscriptBox[
+         RowBox[{"Norm", "[", "r1", "]"}], "3"]]}], "r1"}], "+", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"G", " ", "m2"}], 
+       SuperscriptBox[
+        RowBox[{"Norm", "[", 
+         RowBox[{"r2", "-", "r1"}], "]"}], "3"]], 
+      RowBox[{"(", 
+       RowBox[{"r2", "-", "r1"}], ")"}]}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.678838716587288*^9, 3.6788387612016983`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]2", "=", 
+   RowBox[{
+    RowBox[{"Dt", "[", 
+     RowBox[{"r2", ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "2"}], "}"}]}], "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"G", " ", "M"}], 
+        SuperscriptBox[
+         RowBox[{"Norm", "[", "r2", "]"}], "3"]]}], "r2"}], "+", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"G", " ", "m1"}], 
+       SuperscriptBox[
+        RowBox[{"Norm", "[", 
+         RowBox[{"r2", "-", "r1"}], "]"}], "3"]], 
+      RowBox[{"(", 
+       RowBox[{"r2", "-", "r1"}], ")"}]}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.67883876276167*^9, 3.678838807852993*^9}, {
+  3.6788389797238054`*^9, 3.6788389798062115`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]3", "=", 
+   RowBox[{
+    RowBox[{"Dt", "[", 
+     RowBox[{"rtil", ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "2"}], "}"}]}], "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"G", " ", "M"}], 
+        SuperscriptBox[
+         RowBox[{"Norm", "[", "r2", "]"}], "3"]]}], "r2"}], "+", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"G", " ", "M"}], 
+       SuperscriptBox[
+        RowBox[{"Norm", "[", "r1", "]"}], "3"]], "r1"}], "-", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"G", " ", "m"}], 
+       SuperscriptBox[
+        RowBox[{"Norm", "[", "rtil", "]"}], "3"]], "rtil"}]}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6788389269246473`*^9, 3.6788389908359222`*^9}, {
+  3.6788390227389946`*^9, 3.6788390304394197`*^9}}],
+
+Cell["Validate equation 3", "Text",
+ CellChangeTimes->{{3.6788392725016174`*^9, 3.678839281133729*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"eqn\[LetterSpace]3", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", "/.", " ", 
+   RowBox[{"rtil", "\[Rule]", 
+    RowBox[{"r2", "-", "r1"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", " ", "/.", " ", 
+   RowBox[{"m", "\[Rule]", " ", 
+    RowBox[{"m2", "-", "m1"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", " ", "/.", " ", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"eqn\[LetterSpace]1", ",", 
+      RowBox[{"Dt", "[", 
+       RowBox[{"r1", ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "2"}], "}"}]}], "]"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", " ", "/.", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"eqn\[LetterSpace]2", ",", 
+      RowBox[{"Dt", "[", 
+       RowBox[{"r2", ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "2"}], "}"}]}], "]"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Simplify", "[", "%", "]"}]}], "Input",
+ CellChangeTimes->{{3.6788390320325923`*^9, 3.6788390854433527`*^9}, {
+  3.6788391191199245`*^9, 3.678839132510339*^9}, {3.6788392260209703`*^9, 
+  3.6788392376772914`*^9}, {3.678839268962254*^9, 3.678839269455635*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.678839076294902*^9, 3.678839086001326*^9}, {
+   3.6788391209491262`*^9, 3.6788391344608526`*^9}, {3.6788392208480206`*^9, 
+   3.678839237933217*^9}, 3.6788392697846527`*^9}]
+}, Open  ]]
+},
+WindowSize->{759, 553},
+WindowMargins->{{Automatic, 252}, {Automatic, 44}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 719, 23, 49, "Input"],
+Cell[1280, 45, 769, 24, 49, "Input"],
+Cell[2052, 71, 847, 27, 49, "Input"],
+Cell[2902, 100, 103, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[3030, 105, 1277, 33, 132, "Input"],
+Cell[4310, 140, 227, 3, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
